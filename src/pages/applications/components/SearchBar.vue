@@ -12,46 +12,47 @@
 
 
 
-            <!--search Options -->
         </div>
 
         <div class="w-full flex items-center">
+            <!-- search options -->
             <transition>
                 <a-row v-if="activeSearch == 'search'" :gutter='12' class="w-full items-center">
-                    <a-col :lg="6" :xl="5" :xxl="4"> <a-button type="" class="search-btn">
-                            {{ t('search.byNumber') }}</a-button>
+                    <a-col :lg="6" :xl="5" :xxl="4">
+                        <a-input v-model:value="value" size="large" :placeholder="t('search.byNumber')" />
                     </a-col>
-                    <a-col :lg="6" :xl="5" :xxl="4"> <a-button type="" class="search-btn">
-                            {{ t('search.byPnfl') }}</a-button>
+                    <a-col :lg="6" :xl="5" :xxl="4">
+                        <a-input v-model:value="value" size="large" :placeholder="t('search.byPnfl')" />
                     </a-col>
-                    <a-col :lg="6" :xl="5" :xxl="4"> <a-button type="" class="search-btn">
-                            {{ t('search.byName') }}</a-button>
+                    <a-col :lg="6" :xl="5" :xxl="4">
+                        <a-input v-model:value="value" size="large" :placeholder="t('search.byName')" />
                     </a-col>
                 </a-row>
             </transition>
 
+            <!-- filter -->
             <transition>
                 <a-row v-if="activeSearch == 'filter'" class="w-full" :gutter="12">
                     <a-col :lg="4">
-                        <a-select v-model:value="status" show-search placeholder="Ariza holatini tanlang..."
+                        <a-select v-model:value="status" size="large" show-search placeholder="Ariza holatini tanlang..."
                             class="w-full" :options="statusOptions" :filter-option="filterOption"></a-select>
                     </a-col>
 
                     <a-col :lg="4">
-                        <a-select v-model:value="region" show-search placeholder="Hududni tanlang" class="w-full"
+                        <a-select v-model:value="region" size="large" show-search placeholder="Hududni tanlang" class="w-full"
                             :options="regionOptions" :filter-option="filterOption"></a-select>
                     </a-col>
                     <a-col :lg="4">
-                        <a-select v-model:value="bank" show-search placeholder="Bankni tanlang..." class="w-full"
+                        <a-select v-model:value="bank" size="large" show-search placeholder="Bankni tanlang..." class="w-full"
                             :options="banksOptions" :filter-option="filterOption"></a-select>
                     </a-col>
 
                     <a-col :lg="4">
-                        <a-select v-model:value="univer" show-search placeholder="Ta’lim muassasasini tanlang..."
+                        <a-select v-model:value="univer" size="large" show-search placeholder="Ta’lim muassasasini tanlang..."
                             class="w-full" :options="univerOptions" :filter-option="filterOption"></a-select>
                     </a-col>
                     <a-col :lg="3">
-                        <a-select v-model:value="gender" show-search placeholder="Jinsni tanlang..." class="w-full"
+                        <a-select v-model:value="gender" size="large" show-search placeholder="Jinsni tanlang..." class="w-full"
                             :options="genderOptions" :filter-option="filterOption"></a-select>
                     </a-col>
                     <a-col :lg="5">
@@ -151,20 +152,17 @@ const date = ref()
     height: 40px;
 }
 
-:deep(.ant-select-selector) {
-    height: 40px !important;
-    padding: 5px 11px !important;
-}
-
 :deep(.ant-picker) {
-    padding: 10px 11px 6px 26px !important;
+    padding: 9px 11px 6px 26px !important;
 }
 
 :deep(.ant-picker .ant-picker-suffix) {
     position: absolute;
     left: 4px;
     color: var(--main-blue);
+    top: 12px;
 }
+
 
 .v-enter-active {
     transition: opacity 0.5s ease;

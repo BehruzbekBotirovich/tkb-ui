@@ -18,22 +18,7 @@ const siderStyle = {
 </script>
 
 <template>
-  <a-layout style="height: 100vh;">
-    <a-layout-sider :style="siderStyle" class="shadow-md">
-      <Aside></Aside>
-    </a-layout-sider>
-    <a-layout>
-      <a-layout-header :style="headerStyle">
-        <Header></Header>
-      </a-layout-header>
-      <a-layout-content :style="contentStyle" class="overflow-auto p-4">
-        <router-view />
-      </a-layout-content>
-    </a-layout>
-  </a-layout>
-
-
-
+  <router-view />
 </template>
 
 <style scoped>

@@ -49,11 +49,6 @@ import { useI18n } from 'vue-i18n';
 
 const { locale } = useI18n();
 
-//  mobile view
-const lang_data_mob = ref([
-    { label: "O'z", value: 'uz' },
-    { label: 'Ру', value: 'ru' },
-]);
 
 const lang = ref(localStorage.getItem('i18n') || 'uz');
 const selectLang = (newLang) => {
