@@ -28,7 +28,7 @@ export const useDashboardStore = defineStore('dashboard', {
     ],
     bankTable: [
       {
-        id: 1, name: 'Hamkorbank', applications: 123123, icon: "@/assets/images/hamkorbank.svg"
+        id: 1, name: 'Hamkorbank', applications: 123123, icon: "https://play-lh.googleusercontent.com/TquJPs6s1kD3uMAqSrObS3HP10HRXFX70QjUNq0dUlznsIDQ1gQy2ninl0SqtkQ8Moqn=w240-h480-rw"
       }
     ],
     genderDiagram: [

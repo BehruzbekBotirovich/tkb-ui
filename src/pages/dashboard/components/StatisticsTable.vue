@@ -62,11 +62,11 @@ const columns = [
                     <router-link v-if="hasLink" :to="`?region_id=${record.id}&region_name=${record.name}`">
                         <span class="font-semibold"> {{ record[column.key] }}</span>
                     </router-link>
-                    <span v-else>
-                        <img v-if="icon" :src="icon" alt="">
+
+                    <span v-else class="flex items-center gap-2">
+                        <img v-if="record.icon" :src="record.icon" class="w-5 h-5  rounded-full overflow-hidden">
                         <span class="font-semibold"> {{ record[column.key] }}</span>
                     </span>
-
                 </template>
 
             </template>

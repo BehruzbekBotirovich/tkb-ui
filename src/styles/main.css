@@ -1,7 +1,21 @@
-@import './base.css';
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   box-sizing: border-box;
   font-family: "Public Sans", serif;
+}
+
+:root {
+  --main-blue: #005CE8;
+  --main-red: #E84646;
+  --success-green: #0CCA6B;
+  --body-light: #F0F0F6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
 }
