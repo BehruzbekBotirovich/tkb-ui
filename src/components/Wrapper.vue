@@ -16,4 +16,4 @@ import Header from './Header.vue';
 import Aside from './Aside.vue';
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped></style>

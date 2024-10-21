@@ -67,7 +67,7 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style>
 .my-selector {
     border-radius: 10px;
     overflow: hidden;
