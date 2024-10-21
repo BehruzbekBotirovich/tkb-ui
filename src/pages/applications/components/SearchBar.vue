@@ -131,7 +131,7 @@ const gender = ref()
 const date = ref()
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .activeBtn {
     border: 1px solid var(--main-blue);
     background: white;
