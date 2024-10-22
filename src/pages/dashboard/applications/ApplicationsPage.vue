@@ -67,7 +67,7 @@ const columns = [
 
 <template>
     <!-- poisk -->
-    <SearchBar></SearchBar>
+    <search-bar></search-bar>
 
     <a-table :columns="columns" :dataSource="store.applsList" rowKey="id" :align="center">
         <template #title>Arizalar</template>
@@ -110,13 +110,13 @@ const columns = [
 
 
     <!-- city companies drawer -->
-    <a-modal v-model:open="open" :footer="false"width="80vw" style="top: 20px">
-        <AppInfo></AppInfo>
+    <a-modal v-model:open="open" :footer="false" width="80vw" style="top: 20px">
+        <app-info></app-info>
     </a-modal>
     <a-modal title="Ariza qadamlari" v-model:open="open2" :footer="false" width="460px"
         :style="{ top: '0', right: '0', height: '100vh', position: 'fixed', margin: '0', padding: '0' }"
         body-style="{ height: '100%', padding: '0' }">
-        <AppSteps></AppSteps>
+        <app-steps></app-steps>
     </a-modal>
 
 

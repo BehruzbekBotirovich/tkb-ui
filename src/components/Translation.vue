@@ -37,9 +37,7 @@
                 </div>
             </a-select-option>
         </a-select>
-        <!-- Mobile -->
-        <a-select ref="select" style="width: 67px" v-model:value="lang" :options="lang_data_mob" @change="selectLang"
-            class="lg:hidden" />
+      
     </div>
 </template>
 
