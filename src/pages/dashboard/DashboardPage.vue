@@ -67,7 +67,7 @@ const statCount = reactive([
 
 <template>
 
-    <div class="flex gap-2 items-center justify-end">
+    <div class="flex gap-2 items-center justify-end mb-2">
         <a-date-picker class="pl-10 w-64" v-model="data1" placeholder="DD / MM / YY" />
         <a-date-picker class="pl-10 w-64" v-model="data2" placeholder="DD / MM / YY" />
     </div>

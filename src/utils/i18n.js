@@ -85,14 +85,27 @@ const messages = {
             byPnfl: ' JSHSHIR raqami bo’yicha izlash',
             byName: '  F.I.Sh bo’yicha izlash',
         },
-        filter:{
+        filter: {
+            byStatus: 'Ariza holatini tanlang',
+            byRegion: 'Hududni tanlang',
+            byBank: 'Bankni tanlang',
+            byUniver: 'Ta’lim muassasasini tanlang',
+            byGender: "Jinsni tanlang"
 
         },
-        // to do ---->
-        applSteps: {
-            new: "yangi"
-        },
+        steps: {
+            confirmedGuarantor: 'KAFIL TASDIQLANDI',
+            coBorrowerConfirmed: 'BIRGALIKDA QARZ OLUVCHI TASDIQLADI',
+            applicationSentToBank: 'ARIZA BANKKA JO’NATILDI',
+            inProcess: 'JARAYONDA',
+            accepted: 'QABUL QILINGAN',
+            rejected: 'RAD QILINGAN',
+            successful: 'Muvaffaqqatli',
+            canceled: 'Bekor qilingan',
+            new: 'YANGI',
+        }
     },
+    // russian ---------------------------------------------------->
     ru: {
         application: 'Заявки',
         all: 'Все',
@@ -169,8 +182,35 @@ const messages = {
             grade: 'Курс',
             speciality: 'Название специальности',
             doc: 'Договор'
-        }
+        },
+
+        search: {
+            byNumber: 'Поиск по номеру заявки',
+            byPnfl: 'Поиск по номеру JSHSHIR',
+            byName: 'Поиск по Ф.И.О.',
+        },
+        filter: {
+            byStatus: 'Выберите статус заявки',
+            byRegion: 'Выберите регион',
+            byBank: 'Выберите банк',
+            byUniver: 'Выберите учебное заведение',
+            byGender: 'Выберите пол',
+        },
+        steps: {
+            confirmedGuarantor: 'Поручитель подтверждён',
+            coBorrowerConfirmed: 'Созаемщик подтвердил',
+            applicationSentToBank: 'Заявка отправлена в банк',
+            inProcess: 'В процессе',
+            accepted: 'Принята',
+            rejected: 'Отклонена',
+            successful: 'Успешно',
+            canceled: 'Отменена',
+            new: 'Новая',
+        },
+
     },
+
+    //english----------------------------------------------------------->
     en: {
         application: 'Applications',
         all: 'All',
@@ -247,8 +287,31 @@ const messages = {
             grade: 'Course',
             speciality: 'Specialty name',
             doc: 'Contract'
-        }
+        },
+        search: {
+            byNumber: 'Search by application number',
+            byPnfl: 'Search by JSHSHIR number',
+            byName: 'Search by full name',
+        },
+        filter: {
+            byStatus: 'Select application status',
+            byRegion: 'Select region',
+            byBank: 'Select bank',
+            byUniver: 'Select educational institution',
+            byGender: 'Select gender',
+        },
 
+        steps: {
+            confirmedGuarantor: 'Guarantor confirmed',
+            coBorrowerConfirmed: 'Co-borrower confirmed',
+            applicationSentToBank: 'Application sent to bank',
+            inProcess: 'In process',
+            accepted: 'Accepted',
+            rejected: 'Rejected',
+            successful: 'Successful',
+            canceled: 'Canceled',
+            new: 'New',
+        }
     }
 
 

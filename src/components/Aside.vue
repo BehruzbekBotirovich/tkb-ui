@@ -64,7 +64,6 @@
                         {{ $t('application') }}
                     </li>
                 </router-link>
-
             </ul>
 
         </nav>
