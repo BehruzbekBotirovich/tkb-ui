@@ -74,9 +74,10 @@ const statCount = computed(() => {
         <a-date-picker class="pl-10 w-64" v-model="data2" placeholder="DD / MM / YY" size="large" />
     </div>
     <!-- blocks statistisc -->
-    <a-row class="stat-wrapper">
-        <a-col v-for="el in  statCount " :lg="6" class="stat-block">
-            <div class="bg-white py-4 px-6 rounded flex items-center justify-between " :style="{ color: el.color }">
+    <a-row class="mb-4" :gutter="[12, 12]">
+        <a-col v-for="el  in   statCount" :key="el.id" :md="12" :lg="8" :xl="6" class="stat-block">
+            <div class="bg-white py-4 px-6 rounded flex items-center justify-between h-full"
+                :style="{ color: el.color }">
                 <div>
                     <div class="font-bold uppercase">{{ el.title }}</div>
                     <div class="italic">{{ el.description }}</div>
@@ -86,22 +87,22 @@ const statCount = computed(() => {
         </a-col>
     </a-row>
     <!-- tables statistisc -->
-    <a-row>
-        <a-col :lg="6" class="stat-block">
+    <a-row :gutter="[12, 12]">
+        <a-col :xs="24" :md="12" :lg="8" :xl="6" class="stat-block">
             <statistics-table :title="`${t('statisticsTable.region')}`" :hasLink="true"
                 :description="`${t('statisticsTable.regionName')}`" :data="store.regionalTable"> </statistics-table>
         </a-col>
-        <a-col :lg="6" class="stat-block">
+        <a-col :xs="24" :md="12" :lg="8" :xl="6" class="stat-block">
             <statistics-table :title="`${t('statisticsTable.univer')}`" :hasLink="false"
                 :description="`${t('statisticsTable.regionName')}`" :data="store.universityTable">
             </statistics-table>
         </a-col>
-        <a-col :lg="6" class="stat-block">
+        <a-col :xs="24" :md="12" :lg="8" :xl="6" class="stat-block">
             <statistics-table :title="`${t('statisticsTable.banks')}`" :hasLink="false"
                 :description="`${t('statisticsTable.banksName')}`" :data="store.bankTable">
             </statistics-table>
         </a-col>
-        <a-col :lg="6" class="stat-block">
+        <a-col :xs="24" :md="12" :lg="8" :xl="6" class="stat-block">
             <gender-diagram></gender-diagram>
         </a-col>
     </a-row>
@@ -111,17 +112,5 @@ const statCount = computed(() => {
     color: #005CE8;
     position: absolute;
     left: -30px;
-}
-
-.stat-block {
-    padding: 8px;
-}
-
-.stat-block:nth-child(4n) {
-    padding-right: 0px;
-}
-
-.stat-block:nth-child(4n+1) {
-    padding-left: 0px;
 }
 </style>
