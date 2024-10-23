@@ -2,6 +2,10 @@ import { defineStore } from 'pinia';
 
 export const useDashboardStore = defineStore('dashboard', {
   state: () => ({
+    counts: [
+
+    ],
+
     regionalTable: [
       { id: 1, name: 'Toshkent shahri', applications: '5,23123' },
       { id: 2, name: 'Andijon viloyati', applications: '23123' },

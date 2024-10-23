@@ -75,7 +75,7 @@ const statCount = computed(() => {
     </div>
     <!-- blocks statistisc -->
     <a-row class="mb-4" :gutter="[12, 12]">
-        <a-col v-for="el  in   statCount" :key="el.id" :md="12" :lg="8" :xl="6" class="stat-block">
+        <a-col v-for="el  in   statCount" :key="el.id" :xs="24" :sm="12" :md="12" :lg="8" :xl="6" class="stat-block">
             <div class="bg-white py-4 px-6 rounded flex items-center justify-between h-full"
                 :style="{ color: el.color }">
                 <div>

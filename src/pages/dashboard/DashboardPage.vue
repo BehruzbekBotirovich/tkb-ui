@@ -19,7 +19,7 @@ const siderStyle = {
 
 <template>
     <a-layout style="height: 100vh;">
-        <a-layout-sider :style="siderStyle" class="shadow-md" width="280px">
+        <a-layout-sider :style="siderStyle" class="aside-block">
             <aside-component />
         </a-layout-sider>
         <a-layout>
@@ -40,5 +40,14 @@ const siderStyle = {
 :deep(.ant-layout .ant-layout-header) {
     height: 72px;
     line-height: 72px;
+}
+
+.aside-block {
+    width: 280px;
+
+    @media (max-width:1024px) {
+        width: 200px;
+    }
+
 }
 </style>
