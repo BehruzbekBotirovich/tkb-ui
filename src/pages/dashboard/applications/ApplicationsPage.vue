@@ -36,7 +36,7 @@ const showSteps = () => {
 
             <a-table-column key="jshshir" data-index="jshshir" :title="$t('appl.code')"></a-table-column>
             <a-table-column key="institution" data-index="institution"
-                :title="$t('appl.statisticsTable.univer')"></a-table-column>
+                :title="$t('statisticsTable.univer')"></a-table-column>
             <a-table-column key="date" data-index="date" :title="$t('appl.date')"></a-table-column>
 
             <a-table-column key="status" data-index="status" :title="$t('status')"></a-table-column>
