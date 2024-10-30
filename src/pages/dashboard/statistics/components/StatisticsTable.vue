@@ -1,11 +1,8 @@
 <script setup>
-import { ref } from 'vue';
-import { useDashboardStore } from '@/stores/dashboard.pinia.js'
 import { defineProps } from 'vue';
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();  //
-const store = useDashboardStore();
 const props = defineProps({
     title: {
         type: String,
@@ -28,25 +25,6 @@ const props = defineProps({
         required: true
     }
 });
-
-const columns = [
-    {
-        title: props.description,
-        dataIndex: 'name',
-        key: 'name',
-        align: 'left',
-        fontWeight: 'bold',
-    },
-    {
-        title: t('statisticsTable.appCount'),
-        dataIndex: 'applications',
-        key: 'applications',
-        align: 'left',
-        padding: 5,
-    },
-];
-
-
 </script>
 
 <template>
@@ -54,21 +32,28 @@ const columns = [
         <h2 class="uppercase text-center  p-3 font-semibold">
             {{ title }}
         </h2>
-        <a-table :columns="columns" :data-source="data" :pagination="false" :loading="loading" row-key="id"
-            class="custom-table">
-            <template #bodyCell="{ column, record }">
+        <a-table :data-source="data" :pagination="false" :loading="loading" row-key="id" class="custom-table">
 
+            <a-table-column key="name" data-index="name" :title="props.description"
+                class="text-left font-bold"></a-table-column>
+
+            <a-table-column key="applications" data-index="applications"
+                :title="$t('statisticsTable.appCount')"></a-table-column>
+
+            <template #bodyCell="{ column, record }">
                 <template v-if="column.key === 'name'">
                     <router-link v-if="hasLink" :to="`?region_id=${record.id}&region_name=${record.name}`">
                         <span class="font-semibold"> {{ record[column.key] }}</span>
                     </router-link>
 
                     <span v-else class="flex items-center gap-2">
-                        <img v-if="record.icon" :src="record.icon" class="w-5 h-5  rounded-full overflow-hidden">
+                        <div class="w-5 h-5">
+                            <img v-if="record.icon" :src="record.icon"
+                                class="aspect-square object-cover rounded-full overflow-hidden">
+                        </div>
                         <span class="font-semibold"> {{ record[column.key] }}</span>
                     </span>
                 </template>
-
             </template>
 
         </a-table>

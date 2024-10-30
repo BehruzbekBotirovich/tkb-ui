@@ -1,6 +1,5 @@
 <template>
     <div class="flex items-center">
-        <!-- Desktop -->
         <a-select ref="select" style="width: 140px" v-model:value="lang" @change="selectLang"
             class="hidden lg:block my-selector">
             <template #suffixIcon>
@@ -52,7 +51,7 @@ const lang = ref(localStorage.getItem('i18n') || 'uz');
 const selectLang = (newLang) => {
     locale.value = newLang;
     localStorage.setItem('i18n', newLang);
-    location.reload()
+    // location.reload()    
 };
 
 onMounted(() => {

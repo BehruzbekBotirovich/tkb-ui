@@ -7,23 +7,6 @@ const store = useDashboardStore();
 
 import { ref } from 'vue';
 
-const columns = [
-    {
-        title: t('statisticsTable.genderName'),
-        dataIndex: 'name',
-        key: 'name',
-        align: 'left',
-        fontWeight: 'bold',
-        width: '50%'
-    },
-    {
-        title: t('statisticsTable.appCount'),
-        dataIndex: 'count',
-        key: 'count',
-        align: 'left',
-        padding: 5,
-    },
-];
 const chartOptions = ref({
     chart: {
         type: 'donut',
@@ -64,15 +47,20 @@ const series = ref([1231, 435]);
         <apexchart type="donut" :options="chartOptions" :series="series"></apexchart>
 
         <div class="flex justify-center">
-            <a-table :columns="columns" :data-source="store.genderDiagram" :pagination="false" :loading="loading"
-                row-key="id" class="custom-table w-4/5">
+            <a-table :data-source="store.genderDiagram" :pagination="false" :loading="loading" row-key="id"
+                class="custom-table w-4/5">
+
+                <a-table-column key="name" data-index="name" :title="$t('statisticsTable.genderName')"
+                    class="text-left font-bold w-1/2"></a-table-column>
+                <a-table-column key="count" data-index="count" :title="$t('statisticsTable.appCount')"></a-table-column>
+
                 <template #bodyCell="{ column, text, record }">
                     <span v-if="column.dataIndex === 'name'" class="flex items-center gap-2">
                         <div class="w-3 h-3 rounded-full" :style="{ backgroundColor: record.color }"> </div>
                         {{ text }}
                     </span>
-
                 </template>
+                
             </a-table>
         </div>
 

@@ -19,54 +19,6 @@ const showSteps = () => {
     open2.value = true
 }
 
-const columns = [
-    {
-        title: t('appl.appNumber'),
-        dataIndex: 'applicationNumber',
-        key: 'applicationNumber',
-        width: '200px'
-    },
-    {
-        title: t('appl.fio'),
-        dataIndex: 'fullName',
-        key: 'fullName'
-    },
-    {
-        title: t('appl.code'),
-        dataIndex: 'jshshir',
-        key: ' jshshir',
-    },
-    {
-        title: t('statisticsTable.univer'),
-        dataIndex: 'institution',
-        key: 'institution',
-    },
-    {
-        title: t('appl.date'),
-        dataIndex: 'date',
-        key: 'date',
-        width: '140px',
-    },
-    {
-        title: t('status'),
-        dataIndex: 'status',
-        key: 'status',
-        width: '180px',
-
-    },
-    {
-        title: t('summ'),
-        dataIndex: 'amount',
-        key: 'amount',
-        width: '140px',
-
-    },
-    {
-        title: '',
-        key: 'action',
-        width: '140px'
-    },
-];
 
 </script>
 
@@ -75,8 +27,22 @@ const columns = [
     <search-bar></search-bar>
     <div class="overflow-auto" style="width:calc(100vw - 280px)">
 
-        <a-table :columns="columns" :dataSource="store.applsList" rowKey="id" :align="center">
+        <a-table :dataSource="store.applsList" rowKey="id" :align="center">
             <template #title>Arizalar</template>
+
+            <a-table-column key="applicationNumber" data-index="applicationNumber"
+                :title="$t('appl.appNumber')"></a-table-column>
+            <a-table-column key="fullName" data-index="fullName" :title="$t('appl.fio')"></a-table-column>
+
+            <a-table-column key="jshshir" data-index="jshshir" :title="$t('appl.code')"></a-table-column>
+            <a-table-column key="institution" data-index="institution"
+                :title="$t('appl.statisticsTable.univer')"></a-table-column>
+            <a-table-column key="date" data-index="date" :title="$t('appl.date')"></a-table-column>
+
+            <a-table-column key="status" data-index="status" :title="$t('status')"></a-table-column>
+            <a-table-column key="amount" data-index="amount" :title="$t('summ')"></a-table-column>
+            <a-table-column key="action" widht="140"></a-table-column>
+
             <template #bodyCell="{ column, record }">
                 <template v-if="column.key === 'action'" class="w-fit">
                     <button class="action-btn mr-2" @click="showDrawer">
